@@ -300,7 +300,7 @@ module WebHDFS
       stat(path)
       append(path, data + "\n")
     rescue WebHDFS::FileNotFoundError
-      options = permissions.nil? ? {} : { 'permission' => permission }
+      options = permission.nil? ? {} : { 'permission' => permission }
       create(path, data + "\n", options)
     end
 
