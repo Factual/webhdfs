@@ -1,4 +1,5 @@
 require 'faraday'
+require 'faraday_middleware'
 
 module WebHDFS
   class APIConnection
@@ -10,7 +11,8 @@ module WebHDFS
     def connection
       @conn ||= Faraday.new(@host, headers: @headers) do |builder|
         builder.response :logger, WebHDFS.logger
-        builder.use Faraday::Adapter::NetHttp
+        builder.use FaradayMiddleware::FollowRedirects
+        builder.adapter :net_http
       end
     end
 
