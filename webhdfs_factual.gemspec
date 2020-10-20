@@ -20,7 +20,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "webmock"
 
   gem.add_runtime_dependency "addressable"
-  gem.add_runtime_dependency "faraday", ["1.1.0"]
-  gem.add_runtime_dependency "faraday_middleware", ["1.0.0"]
+  gem.add_runtime_dependency "faraday", ["~> 1.0.0"]
+  gem.add_runtime_dependency "faraday_middleware", ["~> 1.0.0"]
   gem.add_runtime_dependency "gssapi-factual"
 end
